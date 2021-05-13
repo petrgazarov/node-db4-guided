@@ -11,7 +11,9 @@ exports.up = async function (knex) {
     })
     .createTable('animals', tbl => {
       tbl.increments('animal_id')
-      tbl.string('animal_name').notNullable().unique()
+      tbl.string('animal_name').notNullable()
+      tbl.integer('species_id')
+        
     })
     .createTable('', tbl => {
 
