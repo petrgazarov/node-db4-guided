@@ -8,7 +8,6 @@ exports.up = async function (knex) {
     .createTable('species', tb => {
       tbl.increments('species_id')
       tbl.string('species_name').notNullable().unique()
-
     })
 
 };
