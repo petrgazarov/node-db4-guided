@@ -14,14 +14,14 @@ exports.up = async function (knex) {
       tbl.string('animal_name').notNullable()
       tbl.integer('species_id')
         .unsigned()
-        .defaultTo(1)
+        .notNullable()
         .references('species_id')
         .inTable('species')
         .onDelete('CASCADE')
         .onUpdate('CASCADE') // YOU WON'T NEED IT!!!!
     })
     .createTable('', tbl => {
-
+      
     })
 
 };
