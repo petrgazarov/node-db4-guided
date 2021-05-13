@@ -17,7 +17,7 @@ exports.up = async function (knex) {
         .notNullable()
         .references('species_id')
         .inTable('species')
-        .onDelete('CASCADE')
+        .onDelete('RESTRICT')
     })
     .createTable('', tbl => {
 
