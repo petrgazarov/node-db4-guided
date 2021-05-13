@@ -13,7 +13,10 @@ exports.up = async function (knex) {
       tbl.increments('animal_id')
       tbl.string('animal_name').notNullable()
       tbl.integer('species_id')
-        
+        .unsigned()
+        .notNullable()
+        .references('species_id')
+        .inTable()
     })
     .createTable('', tbl => {
 
