@@ -20,8 +20,15 @@ exports.up = async function (knex) {
         .onDelete('CASCADE')
         .onUpdate('CASCADE') // YOU WON'T NEED IT!!!!
     })
-    .createTable('', tbl => {
-      
+    .createTable('zoo_animals', tbl => {
+      tbl.increments('zoo_animal_id')
+      tbl.integer('zoo_id')
+        .unsigned()
+        .notNullable()
+        .references('species_id')
+        .inTable('species')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE')
     })
 
 };
