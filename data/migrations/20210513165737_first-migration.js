@@ -16,7 +16,7 @@ exports.up = async function (knex) {
         .unsigned()
         .notNullable()
         .references('species_id')
-        .inTable()
+        .inTable('species')
     })
     .createTable('', tbl => {
 
