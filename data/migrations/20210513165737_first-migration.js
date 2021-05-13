@@ -14,7 +14,7 @@ exports.up = async function (knex) {
       tbl.string('animal_name').notNullable()
       tbl.integer('species_id')
         .unsigned()
-        .notNullable()
+        .notNullable() 
         .references('species_id')
         .inTable('species')
         .onDelete('CASCADE')
