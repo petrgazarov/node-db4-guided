@@ -25,12 +25,18 @@ exports.up = async function (knex) {
       tbl.integer('zoo_id')
         .unsigned()
         .notNullable()
-        .references('species_id')
-        .inTable('species')
+        .references('zoo_id')
+        .inTable('zoos')
         .onDelete('CASCADE')
-        .onUpdate('CASCADE')
+        .onUpdate('CASCADE') // YOU WON'T NEED IT!!!!
+      tbl.integer('animal_id')
+        .unsigned()
+        .notNullable()
+        .references('animal_id')
+        .inTable('animals')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE') // YOU WON'T NEED IT!!!!
     })
-
 };
 
 exports.down = function (knex) {
