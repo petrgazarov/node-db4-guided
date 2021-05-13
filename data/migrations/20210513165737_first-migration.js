@@ -17,8 +17,8 @@ exports.up = async function (knex) {
         .notNullable()
         .references('species_id')
         .inTable('species')
-        .onDelete('CASCADE')
-        .onUpdate('CASCADE') // YOU WON'T NEED IT!!!!
+        .onDelete('RESTRICT')
+        .onUpdate('RESTRICT') // YOU WON'T NEED IT!!!!
     })
     .createTable('zoo_animals', tbl => {
       tbl.increments('zoo_animal_id')
@@ -27,15 +27,15 @@ exports.up = async function (knex) {
         .notNullable()
         .references('zoo_id')
         .inTable('zoos')
-        .onDelete('CASCADE')
-        .onUpdate('CASCADE') // YOU WON'T NEED IT!!!!
+        .onDelete('RESTRICT')
+        .onUpdate('RESTRICT') // YOU WON'T NEED IT!!!!
       tbl.integer('animal_id')
         .unsigned()
         .notNullable()
         .references('animal_id')
         .inTable('animals')
-        .onDelete('CASCADE')
-        .onUpdate('CASCADE') // YOU WON'T NEED IT!!!!
+        .onDelete('RESTRICT')
+        .onUpdate('RESTRICT') // YOU WON'T NEED IT!!!!
     })
 };
 
