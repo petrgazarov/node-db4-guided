@@ -6,12 +6,16 @@ exports.up = function(knex) {
       .integer('zoo_id')
       .unsigned()
       .references('zoos.id')
-      .notNullable();
+      .notNullable()
+      .onDelete('CASCADE')
+      .onUpdate('CASCADE');
     tbl
       .integer('animal_id')
       .unsigned()
       .references('animals.id')
-      .notNullable();
+      .notNullable()
+      .onDelete('CASCADE')
+      .onUpdate('CASCADE');
   });
 };
 

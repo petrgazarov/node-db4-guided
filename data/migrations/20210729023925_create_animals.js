@@ -7,7 +7,9 @@ exports.up = function(knex) {
       .integer('species_id')
       .unsigned()
       .references('species.id')
-      .notNullable();
+      .notNullable()
+      .onDelete('CASCADE')
+      .onUpdate('CASCADE');
   });
 };
 
