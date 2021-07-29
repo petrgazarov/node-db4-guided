@@ -1,5 +1,6 @@
 const express = require('express');
 const helpers = require('./model');
+const { checkSpeciesExists } = require('./middleware');
 
 const router = express.Router();
 
@@ -27,7 +28,7 @@ router.post('/animals', (req, res, next) => { // it would be nice to have animal
     .catch(next);
 });
 
-router.delete('/species/:species_id', (req, res, next) => { // it would be nice to have species_id validation midd
+router.delete('/species/:species_id', checkSpeciesExists, (req, res, next) => { // it would be nice to have species_id validation midd
   helpers.deleteSpecies(req.params.species_id)
     .then(count => {
       if (count > 0) {
