@@ -4,6 +4,10 @@ function getSpecies() {
   return db('species');
 }
 
+function getSpeciesById(id) {
+  return db('species').where({ id }).first();
+}
+
 function getAnimals() { // INCLUDING SPECIES NAME
   return db('animals as a')
     .leftJoin('species as s', 's.id', 'a.species_id')
@@ -21,6 +25,7 @@ function deleteSpecies(id) {
 
 module.exports = {
   getSpecies,
+  getSpeciesById,
   getAnimals,
   createAnimal,
   deleteSpecies,
