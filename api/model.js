@@ -11,12 +11,12 @@ function getAnimals() { // INCLUDING SPECIES NAME
 }
 
 async function createAnimal(animal) {
-  const [animal_id] = await db('animals').insert(animal);
-  return getAnimals().where({ animal_id }).first();
+  const [id] = await db('animals').insert(animal);
+  return getAnimals().where({ id }).first();
 }
 
-function deleteSpecies(species_id) {
-  return db('species').where({ species_id }).del();
+function deleteSpecies(id) {
+  return db('species').where({ id }).del();
 }
 
 module.exports = {
