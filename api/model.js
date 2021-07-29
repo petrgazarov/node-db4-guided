@@ -6,8 +6,8 @@ function getSpecies() {
 
 function getAnimals() { // INCLUDING SPECIES NAME
   return db('animals as a')
-    .leftJoin('species as s', 's.species_id', 'a.species_id')
-    .select('a.animal_id', 'a.animal_name', 's.species_name');
+    .leftJoin('species as s', 's.id', 'a.species_id')
+    .select('a.id', 'a.animal_name', 's.species_name');
 }
 
 async function createAnimal(animal) {
