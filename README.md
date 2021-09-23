@@ -15,3 +15,8 @@ Guided project for **Node DB 4** Module.
 - [ ] type `npm run server` to start the API.
 
 Please follow along as the instructor uses Knex migrations and seeding to create a multi-table database schema.
+
+Files with notes in them:
+* ./knexfile.js
+* ./data/migrations/*
+* ./data/seeds/00-cleanup.js
